@@ -64,21 +64,21 @@ export default {
   },
   methods: {
     async getOrders() {
-      const req = await fetch("http://localhost:3000/burgers");
+      const req = await fetch("https://burger-json-server.herokuapp.com/burgers");
 
       const data = await req.json();
 
       this.burgers = data;
     },
     async getStatus() {
-      const req = await fetch("http://localhost:3000/status");
+      const req = await fetch("https://burger-json-server.herokuapp.com/status");
 
       const data = await req.json();
 
       this.status = data;
     },
     async deleteBurger(id) {
-      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+      const req = await fetch(`https://burger-json-server.herokuapp.com/burgers/${id}`, {
         method: "DELETE",
       });
 
@@ -97,7 +97,7 @@ export default {
 
       const dataJson = JSON.stringify({ status: option });
 
-      const req = await fetch(`http://localhost:3000/burgers/${id}`, {
+      const req = await fetch(`https://burger-json-server.herokuapp.com/burgers/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

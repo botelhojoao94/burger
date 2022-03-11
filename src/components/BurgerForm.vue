@@ -80,7 +80,7 @@ export default {
   },
   methods: {
     async getIngredients() {
-      const req = await fetch("http://localhost:3000/ingredients");
+      const req = await fetch("https://burger-json-server.herokuapp.com/ingredients");
       const data = await req.json();
       this.breads = data.breads;
       this.meats = data.meats;
@@ -100,7 +100,7 @@ export default {
 
       const dataJson = JSON.stringify(data)
 
-      const req = await fetch("http://localhost:3000/burgers", {
+      const req = await fetch("https://burger-json-server.herokuapp.com/burgers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: dataJson,
